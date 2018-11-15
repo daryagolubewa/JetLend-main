@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     date_return: DataTypes.DATE
   }, {});
   Loan.associate = function(models) {
-        Loan.belongsTo(models.Lender , {as: "lender_id"})
+        Loan.belongsTo(models.Lender , {foreignKey: "lender_id"})
 
-        Loan.hasMany(models.Credit, { as: "loan_id" }) 
+        Loan.hasMany(models.Credit, { foreignKey: "loan_id" }) 
   };
   return Loan;
 };
