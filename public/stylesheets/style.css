@@ -7,6 +7,24 @@ a {
   color: #00B7FF;
 }
 
+#new-borrower-form {
+  display: block;
+}
+
+.borrower-email-confirmation-message {
+    display: none;
+}
+
+.borrower-sign-up-error {
+    display: none;
+    color: red;
+}
+
+.input-group {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 
 .jetimg {
   height: 100px;

@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   Credit.associate = function(models) {
    Credit.belongsTo(models.CreditRequest, {foreignKey: "credit_request_id"})
    Credit.belongsTo(models.Loan, {foreignKey: "loan_id"})
+
   };
   return Credit;
 };
