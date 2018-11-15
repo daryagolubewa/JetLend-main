@@ -2,13 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/borrowers', function(req, res) {
-  res.render('borrowerSignUp');
-});
 
-router.get('/enter', function(req, res) {
-    res.render('borrowerSignIn');
-});
+router.get('/', function(req, res, next) {
 
+  let trueHeader = true
+  res.render('index', { trueHeader });
+
+});
 
 module.exports = router;
