@@ -2,8 +2,9 @@ var express = require('express');
 const models = require('../models/index')
 const bcrypt = require('bcrypt');
 const addMiddlewares = require('../middlewares/add-middlewares');
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+const sendEmail = require('../middlewares/sendemail')
+const sendSms = require('../middlewares/sendsms')
+
 
 
 var router = express.Router();
