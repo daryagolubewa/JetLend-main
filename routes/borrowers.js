@@ -10,7 +10,6 @@ addMiddlewares(router);
 const saltRounds = 10;
 
 
-
 router.get('/add', (req,res) => {
   res.render('borrowerSignUp')
 })
@@ -21,6 +20,16 @@ router.get('/enter', function(req, res) {
 
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
+});
+
+router.get('/profile', function(req, res) {
+    res.render('borrowerProfile');
+
+});
+
+router.get('/application', function(req, res) {
+    res.render('applicationForm');
+
 });
 
 
