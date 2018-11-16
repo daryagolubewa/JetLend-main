@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   PayBack.associate = function(models) {
 
-PayBack.belongsTo(models.CreditRequest, {as: "credit_request_id"})
+PayBack.belongsTo(models.CreditRequest, {foreignKey: "credit_request_id"})
 
 
   };
