@@ -20,6 +20,9 @@ module.exports = {
       date_birth: {
         type: Sequelize.DATE
       },
+      passport_number:{
+        type: Sequelize.INTEGER
+      },
       organization: {
         type: Sequelize.STRING
       },
