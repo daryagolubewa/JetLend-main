@@ -9,9 +9,4 @@ router.get('/', function(req, res, next) {
 
 });
 
-// router.get('/', function(req, res) {
-//     res.render('borrowerProfile');
-//
-// });
-
 module.exports = router;

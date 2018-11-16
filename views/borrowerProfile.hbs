@@ -1,4 +1,11 @@
 <div class="borrower-account-main">
-    <a type="submit" name="signup_borrower_btn" value="submit_value" href="/borrowers/add" class="mainpage_buttons">Заполнить анкету заёмщика</a>
- <a href=""><button class="borrower-account-application-btn"> Заполнить анкету заёмщика</button></a>
+    <div class="borrower-account-application-btn">
+        <a type="submit" name="application-btn" value="submit_value" href="/borrowers/application" class="form-buttons borrower-application-btn">Заполнить анкету заёмщика</a>
+    </div>
+    <div class="borrower-account-load-file">
+        <label class="input-group col-1-3">
+            <span class="input-group-label">Загрузить выписку:</span><br>
+            <input id="borrower-file" class="" type="file" accept=".txt" name="file" required>
+        </label><br>
+    </div>
 </div>

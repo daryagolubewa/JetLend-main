@@ -14,9 +14,25 @@ a {
     color: #00B7FF;
 }
 
-.borrower-account-application-btn {
-
+.borrower-account-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 300px;
 }
+
+.borrower-application {
+    margin: auto;
+}
+
+.borrower-application-request {
+    display: none;
+}
+
+.borrower-main {
+    float: right;
+}
+
 
 .borrower-email-confirmation-message {
     display: none;
@@ -27,6 +43,7 @@ a {
     display: none;
     color: #ff0000;
 }
+
 
 header {
     padding-bottom: 30px;
@@ -43,7 +60,13 @@ header {
     margin: -20px;
 }
 
-.mainpage_buttons {
+.forms {
+    display: flex;
+    align-items: center;
+}
+
+
+.form-buttons {
     display: inline-block;
     float: right;
     vertical-align: top;
@@ -61,13 +84,46 @@ header {
     text-decoration: none;
     text-align: center;
     line-height: 40px;
+    cursor: pointer;
 }
 
-.mainpage_buttons:hover {
+.button-sign {
+    margin: 5px 0px 0px 0px;
+    float: left;
+    line-height: 20px;
+}
+
+.button-appl {
+    float: none;
+}
+
+.borrower-application-btn {
+    font-size: 15px;
+    float: none;
+    margin: 10px 10px 10px 0px;
+}
+
+
+.borrower-appl {
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-buttons:hover {
     border-color: #528FF4;
     background-color: #528FF4;
 }
 
 #new-borrower-form {
+    display: block;
+}
+
+#borrower-application {
     display: block;
 }
