@@ -1,3 +1,4 @@
+
 var express = require('express');
 const models = require('../models/index')
 const bcrypt = require('bcrypt');
@@ -8,16 +9,34 @@ var router = express.Router();
 addMiddlewares(router);
 const saltRounds = 10;
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/',  function(req, res, next) {
 
-  res.send('respond with a resource');
+res.render('lender')
+
 });
 
+
+router.get('/regLender', function(req, res, next) {
+res.render('lenderSignUp')
+});
+
+
+router.get('/logLender', function(req, res, next) {
+res.render('lenderSignIn')
+});
+
+
+
 router.post('/add', async (req, res) => {
-  let curEmail = await models.Borrower.getEmail(req.body.email)
-  let curPhone = await models.Borrower.getPhone(req.body.phone)
+  let curEmail = await models.Lender.getEmail(req.body.email)
+  let curPhone = await models.Lender.getPhone(req.body.phone)
   if(curEmail.length && curPhone.length === 0) {
-    models.Borrower.create({"name": req.body.name, "phone": req.body.phone, "email": req.body.email, "password": bcrypt.hashSync(req.body.password, saltRounds)})
+    models.Lender.create({
+      "name":          req.body.lender_name,
+      "phone":         req.body.lender_phone, 
+      "email":         req.body.lender_email,
+      "passport_number": req.body.passport_number,
+      "password":      bcrypt.hashSync(req.body.password, saltRounds)})
     res.send(200, "Ok")
   }
   else {

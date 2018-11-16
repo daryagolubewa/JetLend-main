@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Borrower.associate = function(models) {
 
-  Borrower.hasMany(models.CreditRequest, { foreignKey: "borrower_id" }) 
+  Borrower.hasMany(models.CreditRequest, {foreignKey: "borrower_id" }) 
 
   };
 
