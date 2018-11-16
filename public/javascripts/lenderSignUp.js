@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const btnSbm = document.getElementById('btn-submit');
     const form = document.getElementById('new-lender-form');
-    const message = document.getElementById('lender-email-confirmation-message');
-    const errorMessage = document.getElementById('lender-sign-up-error');
+    const message = document.getElementsByClassName('lender-email-confirmation-message');
+
+    const errorMessage = document.getElementsByClassName('lender-sign-up-error');
 
     btnSbm.addEventListener('click', async () => {
         const lenderName = document.getElementById('lender-name').value;

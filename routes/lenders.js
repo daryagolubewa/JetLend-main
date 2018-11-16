@@ -2,7 +2,7 @@
 var express = require('express');
 const models = require('../models/index')
 const bcrypt = require('bcrypt');
-const addMiddlewares = require('../middlewares/add-middlewares');
+const addMiddlewares = require('../middlewares/add-middlewares-lender');
 
 
 var router = express.Router();

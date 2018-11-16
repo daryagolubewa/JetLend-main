@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.status === 200) {
-            window.location('http://localhost:3000')
+            window.location = 'http://localhost:3000' 
+
+
         } else {
             response = await response.text();
             errorMessage.innerText = response;
