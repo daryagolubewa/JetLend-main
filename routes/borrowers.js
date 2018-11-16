@@ -1,5 +1,6 @@
 var express = require('express');
 const models = require('../models/index')
+const passport = require('passport');
 const bcrypt = require('bcrypt');
 const addMiddlewares = require('../middlewares/add-middlewares');
 
@@ -7,16 +8,26 @@ const addMiddlewares = require('../middlewares/add-middlewares');
 var router = express.Router();
 addMiddlewares(router);
 const saltRounds = 10;
-/* GET users listing. */
-router.get('/', function(req, res, next) {
 
+
+
+router.get('/add', (req,res) => {
+  res.render('borrowerSignUp')
+})
+
+router.get('/enter', function(req, res) {
+    res.render('borrowerSignIn');
+});
+
+router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
 
 router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)
   let curPhone = await models.Borrower.getPhone(req.body.phone)
-  if(curEmail.length && curPhone.length === 0) {
+  if((curEmail.length && curPhone.length) === 0) {
     models.Borrower.create({"name": req.body.name, "phone": req.body.phone, "email": req.body.email, "password": bcrypt.hashSync(req.body.password, saltRounds)})
     res.send(200, "Ok")
   }
@@ -41,7 +52,7 @@ router.post('/enter', (req, res) => {
         }
         return res.json(user)
     })
-})(req, res, next);
+  })(req, res);
 })
 
 module.exports = router;
