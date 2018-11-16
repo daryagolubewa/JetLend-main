@@ -8,8 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     agriment: DataTypes.STRING
   }, {});
   Credit.associate = function(models) {
-   Credit.belongsTo(models.CreditRequest, {as: "credit_request_id"})
-   Credit.belongsTo(models.Loan, {as: "loan_id"}
+   Credit.belongsTo(models.CreditRequest, {foreignKey: "credit_request_id"})
+   Credit.belongsTo(models.Loan, {foreignKey: "loan_id"})
+
   };
   return Credit;
 };
