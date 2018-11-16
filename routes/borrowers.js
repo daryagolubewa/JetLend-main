@@ -7,13 +7,22 @@ const addMiddlewares = require('../middlewares/add-middlewares');
 var router = express.Router();
 addMiddlewares(router);
 const saltRounds = 10;
-/* GET users listing. */
-router.get('/', function(req, res, next) {
 
+router.get('/add', function(req, res) {
+    res.render('borrowerSignUp');
+
+});
+
+router.get('/enter', function(req, res) {
+    res.render('borrowerSignIn');
+
+});
+
+router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)
   let curPhone = await models.Borrower.getPhone(req.body.phone)
   if(curEmail.length && curPhone.length === 0) {

@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const btnSbm = document.getElementById('btn-submit');
     const form = document.getElementById('new-borrower-form');
-    const message = document.getElementById('borrower-email-confirmation-message');
-    const errorMessage = document.getElementById('borrower-sign-up-error');
+    const message = document.getElementsByClassName('borrower-email-confirmation-message')[0];
+    const errorMessage = document.getElementsByClassName('borrower-sign-up-error')[0];
 
     btnSbm.addEventListener('click', async () => {
         const borrowerName = document.getElementById('borrower-name').value;
