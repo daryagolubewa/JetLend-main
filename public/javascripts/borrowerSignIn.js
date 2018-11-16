@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify({email: borrowerEmail, password: borrowerPassword})
         });
-
+        console.log(response)
         if (response.status === 200) {
             window.location = 'http://localhost:3000'
         } else {

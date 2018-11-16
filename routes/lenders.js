@@ -2,11 +2,11 @@
 var express = require('express');
 const models = require('../models/index')
 const bcrypt = require('bcrypt');
-const addMiddlewares = require('../middlewares/add-middlewares-lender');
+const addMiddlewares = require('../middlewares/add-middlewares');
 
 
 var router = express.Router();
-addMiddlewares(router);
+addMiddlewares(router, models.Lender);
 const saltRounds = 10;
 /* GET users listing. */
 router.get('/',  function(req, res, next) {
@@ -50,7 +50,7 @@ router.post('/add', async (req, res) => {
 })
 
 router.post('/enter', (req, res) => {
-
+  addMiddlewares(router, models.Lender);
   console.log("ЗАШЛИ В LOGIN!!!!!!!!!!!")
   passport.authenticate('local', (err, user, info) => {
     if (err) {
