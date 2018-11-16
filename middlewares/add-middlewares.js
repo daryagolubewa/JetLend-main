@@ -12,7 +12,7 @@ function addMiddlewares(router) {
     passport.use(new LocalStrategy(
         { usernameField: 'email' },
         async (email, password, done) => {
-            const foundUsers = await models.Borrower.giveEmail(email);
+            const foundUsers = await models.Borrower.getEmail(email);
             if(foundUsers.length === 0) {
                 return done(400, 'Error. Email not found!');
             } else {

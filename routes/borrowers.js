@@ -1,5 +1,6 @@
 var express = require('express');
 const models = require('../models/index')
+const passport = require('passport');
 const bcrypt = require('bcrypt');
 const addMiddlewares = require('../middlewares/add-middlewares');
 const sendEmail = require('../middlewares/sendemail')
@@ -10,16 +11,20 @@ const sendSms = require('../middlewares/sendsms')
 var router = express.Router();
 addMiddlewares(router);
 const saltRounds = 10;
-/* GET users listing. */
-router.get('/', function(req, res, next) {
 
-  res.send('respond with a resource');
-});
 
-router.get('/add', (req,res) =>{
 
+router.get('/add', (req,res) => {
   res.render('borrowerSignUp')
 })
+
+router.get('/enter', function(req, res) {
+    res.render('borrowerSignIn');
+});
+
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
 
 router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)
@@ -54,7 +59,7 @@ router.post('/enter', (req, res) => {
         }
         return res.json(user)
     })
-})(req, res, next);
+  })(req, res);
 })
 
 module.exports = router;
