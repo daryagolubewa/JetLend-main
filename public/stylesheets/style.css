@@ -48,9 +48,8 @@ header {
   height: 40px;
   font-size: 15pt;
   font-family: 'Open Sans', sans-serif;
-  /* border-radius: 12px; */
   margin: 10px;
-  padding-bottom: 4px
+  padding-bottom: 4px;
 }
 
 .mainpage_buttons:hover {
