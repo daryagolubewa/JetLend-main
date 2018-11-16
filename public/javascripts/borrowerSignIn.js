@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btnSbm = document.getElementById('btn-submit');
-    const errorMessage = document.getElementById('borrower-sign-up-error');
+    const btnSbm1 = document.getElementById('btn-submit-1');
+    const errorMessage = document.getElementsByClassName('borrower-sign-up-error')[0];
 
-    btnSbm.addEventListener('click', async () => {
+    btnSbm1.addEventListener('click', async () => {
         const borrowerEmail = document.getElementById('borrower-email').value;
         const borrowerPassword = document.getElementById('borrower-password').value;
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.status === 200) {
-            window.location('http://localhost:3000')
+            window.location = 'http://localhost:3000'
         } else {
             response = await response.text();
             errorMessage.innerText = response;
