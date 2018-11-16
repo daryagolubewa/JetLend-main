@@ -1,36 +1,46 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Borrowers', {
+    return queryInterface.createTable('Profiles', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        allowNull: false,
+      first_name: {
         type: Sequelize.STRING
       },
-      email: {
-        allowNull: false,
+      last_name: {
         type: Sequelize.STRING
       },
-      phone: {
-        allowNull: false,
+      paternity_name: {
         type: Sequelize.STRING
       },
-      password: {
-        allowNull: false,
+      date_birth: {
+        type: Sequelize.DATE
+      },
+      passport_number:{
+        type: Sequelize.INTEGER
+      },
+      organization: {
         type: Sequelize.STRING
+      },
+      release_date: {
+        type: Sequelize.DATE
+      },
+      tax_number: {
+        type: Sequelize.INTEGER
       },
       file_name: {
         type: Sequelize.STRING
       },
-      // active:{
-      //   type:Sequelize.BOOLEAN,
-      //   defaultValue: false,
-      // },
+      borrower_id: {
+        type: Sequelize.INTEGER
+      },
+      is_scored: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -42,6 +52,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Borrowers');
+    return queryInterface.dropTable('Profiles');
   }
 };

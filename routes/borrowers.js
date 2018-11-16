@@ -3,6 +3,9 @@ const models = require('../models/index')
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const addMiddlewares = require('../middlewares/add-middlewares');
+const sendEmail = require('../middlewares/sendemail')
+const sendSms = require('../middlewares/sendsms')
+
 
 
 var router = express.Router();
@@ -32,7 +35,6 @@ router.get('/application', function(req, res) {
 
 });
 
-
 router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)
   let curPhone = await models.Borrower.getPhone(req.body.phone)
@@ -48,6 +50,11 @@ router.post('/add', async (req, res) => {
       res.send(400, 'This phone is already used')
     }
  } 
+})
+
+router.get('/enter', (req,res) =>{
+
+  res.render('borrowerSignIn')
 })
 
 router.post('/enter', (req, res) => {
