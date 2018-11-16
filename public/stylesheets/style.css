@@ -28,6 +28,7 @@ a {
     color: #ff0000;
 }
 
+
 header {
     padding-bottom: 30px;
 }
@@ -43,7 +44,7 @@ header {
     margin: -20px;
 }
 
-.mainpage_buttons {
+.form-buttons {
     display: inline-block;
     float: right;
     vertical-align: top;
@@ -63,7 +64,13 @@ header {
     line-height: 40px;
 }
 
-.mainpage_buttons:hover {
+.button-sign {
+    margin: 5px 0px 0px 0px;
+    float: left;
+    line-height: 20px;
+}
+
+.form-buttons:hover {
     border-color: #528FF4;
     background-color: #528FF4;
 }

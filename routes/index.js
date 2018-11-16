@@ -9,8 +9,13 @@ router.get('/', function(req, res, next) {
 
 });
 
-// router.get('/', function(req, res) {
-//     res.render('borrowerProfile');
+router.get('/profile', function(req, res) {
+    res.render('borrowerProfile');
+
+});
+
+// router.get('/application', function(req, res) {
+//     res.render('applicationForm');
 //
 // });
 
