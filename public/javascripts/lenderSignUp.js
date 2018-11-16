@@ -5,11 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const errorMessage = document.getElementsByClassName('lender-sign-up-error');
 
+console.log("btnSbm = ", btnSbm )
+
+
     btnSbm.addEventListener('click', async () => {
         const lenderName = document.getElementById('lender-name').value;
         const lenderEmail = document.getElementById('lender-email').value;
         const lenderPassword = document.getElementById('lender-password').value;
         const lenderPhone = document.getElementById('lender-phone').value;
+        const lenderPassport = document.getElementById('lender-passport').value;
+
 
         let response = await fetch('/lenders/add', {
             method: 'post',
@@ -20,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
              name:   lenderName,
              email:  lenderEmail, 
              password: lenderPassword, 
+             passport_number:  lenderPassport,
              phone:  lenderPhone })
         });
 

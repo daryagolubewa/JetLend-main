@@ -30,26 +30,28 @@ res.render('lenderSignIn')
 router.post('/add', async (req, res) => {
   let curEmail = await models.Lender.getEmail(req.body.email)
   let curPhone = await models.Lender.getPhone(req.body.phone)
-  if(curEmail.length && curPhone.length === 0) {
+  // if(curEmail.length && curPhone.length === 0) {
     models.Lender.create({
-      "name":          req.body.lender_name,
-      "phone":         req.body.lender_phone, 
-      "email":         req.body.lender_email,
+      "name":        req.body.name,
+      "phone":       req.body.phone, 
+      "email":       req.body.email,
       "passport_number": req.body.passport_number,
       "password":      bcrypt.hashSync(req.body.password, saltRounds)})
     res.send(200, "Ok")
-  }
-  else {
-    if(curEmail.length == 0) {
-      res.send(400, 'This email is already used')
-    }
-    else {
-      res.send(400, 'This phone is already used')
-    }
- } 
+  // }
+  // else {
+  //   if(curEmail.length == 0) {
+  //     res.send(400, 'This email is already used')
+  //   }
+  //   else {
+  //     res.send(400, 'This phone is already used')
+  //   }
+ // } 
 })
 
 router.post('/enter', (req, res) => {
+
+  console.log("ЗАШЛИ В LOGIN!!!!!!!!!!!")
   passport.authenticate('local', (err, user, info) => {
     if (err) {
         return res.send(400, err);

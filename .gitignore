@@ -3,5 +3,6 @@ sessions
 npm-debug.log
 .idea/
 sessions
+config
 
 
