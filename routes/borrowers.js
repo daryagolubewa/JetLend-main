@@ -2,6 +2,7 @@ var express = require('express');
 const models = require('../models/index')
 const passport = require('passport');
 const bcrypt = require('bcrypt');
+let fs = require('fs');
 const addMiddlewares = require('../middlewares/add-middlewares');
 const sendEmail = require('../middlewares/sendemail')
 const sendSms = require('../middlewares/sendsms')
@@ -9,9 +10,8 @@ const sendSms = require('../middlewares/sendsms')
 
 
 var router = express.Router();
-addMiddlewares(router);
+addMiddlewares(router, models.Borrower);
 const saltRounds = 10;
-
 
 
 router.get('/add', (req,res) => {
@@ -24,6 +24,16 @@ router.get('/enter', function(req, res) {
 
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
+});
+
+router.get('/profile', function(req, res) {
+    res.render('borrowerProfile');
+
+});
+
+router.get('/application', function(req, res) {
+    res.render('applicationForm');
+
 });
 
 router.post('/add', async (req, res) => {
@@ -43,12 +53,8 @@ router.post('/add', async (req, res) => {
  } 
 })
 
-router.get('/enter', (req,res) =>{
-
-  res.render('borrowerSignIn')
-})
-
 router.post('/enter', (req, res) => {
+  addMiddlewares(router, models.Borrower);
   passport.authenticate('local', (err, user, info) => {
     if (err) {
         return res.send(400, err);
