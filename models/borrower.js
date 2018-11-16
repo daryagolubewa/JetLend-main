@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     file_name: DataTypes.STRING,
     password: DataTypes.STRING
+    // active:DotaTypes.BOOLEAN
   }, {});
   Borrower.associate = function(models) {
 
