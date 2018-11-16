@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.status === 200) {
             form.style.display = 'none';
             message.style.display = 'block';
-            
         } else {
             response = await response.text();
             errorMessage.innerText = response;
