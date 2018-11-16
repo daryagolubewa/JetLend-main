@@ -1,12 +1,13 @@
 {
+
   "name": "jetlend",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=* node ./bin/www"
-     
+    "start": "DEBUG=* node ./bin/www"     
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "bcrypt": "^3.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -22,10 +23,12 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.41.0",
     "sequelize-cli": "^5.2.0",
-    "session-file-store": "^1.2.0",
-    "mongoose": "^5.3.11"
+    "sms_ru": "0.0.1"
   },
   "devDependencies": {
-    
+    "morgan": "~1.9.0",
+    "session-file-store": "^1.2.0",
+    "mongoose": "^5.3.11"
   }
+
 }

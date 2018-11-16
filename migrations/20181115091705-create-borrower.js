@@ -9,17 +9,28 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       email: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       phone: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      password: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       file_name: {
         type: Sequelize.STRING
       },
+      // active:{
+      //   type:Sequelize.BOOLEAN,
+      //   defaultValue: false,
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -9,11 +9,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   CreditRequest.associate = function(models) {
 
-    CreditRequest.belongsTo(models.Borrower, {as: "borrower_id"})
+    CreditRequest.belongsTo(models.Borrower, {foreignKey: "borrower_id"})
 
-    CreditRequest.hasMany(models.Credit, { as: "credit_request_id" }) 
+    CreditRequest.hasMany(models.Credit, { foreignKey: "credit_request_id" })
 
-    CreditRequest.hasMany(models.PayBack, { as: "credit_request_id"}) 
+    CreditRequest.hasMany(models.PayBack, {foreignKey: "credit_request_id"})
+
   };
   return CreditRequest;
 };

@@ -4,10 +4,13 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 let fs = require('fs');
 const addMiddlewares = require('../middlewares/add-middlewares');
+const sendEmail = require('../middlewares/sendemail')
+const sendSms = require('../middlewares/sendsms')
+
 
 
 var router = express.Router();
-addMiddlewares(router);
+addMiddlewares(router, models.Borrower);
 const saltRounds = 10;
 
 
@@ -23,7 +26,6 @@ router.get('/enter', function(req, res) {
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-
 
 router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)
@@ -43,6 +45,7 @@ router.post('/add', async (req, res) => {
 })
 
 router.post('/enter', (req, res) => {
+  addMiddlewares(router, models.Borrower);
   passport.authenticate('local', (err, user, info) => {
     if (err) {
         return res.send(400, err);
