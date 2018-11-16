@@ -8,15 +8,21 @@ const addMiddlewares = require('../middlewares/add-middlewares');
 var router = express.Router();
 addMiddlewares(router);
 const saltRounds = 10;
-/* GET users listing. */
-router.get('/', function(req, res, next) {
 
-  res.render('respond with a resource');
-});
+
 
 router.get('/add', (req,res) => {
   res.render('borrowerSignUp')
 })
+
+router.get('/enter', function(req, res) {
+    res.render('borrowerSignIn');
+});
+
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
 
 router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)
@@ -33,10 +39,6 @@ router.post('/add', async (req, res) => {
       res.send(400, 'This phone is already used')
     }
  } 
-})
-
-router.get('/enter', (req,res) => {
-  res.render('borrowerSignIn')
 })
 
 router.post('/enter', (req, res) => {

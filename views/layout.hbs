@@ -13,10 +13,10 @@
     <header>
       <img src="/images/logo.png" class="jetimg">
       {{#if trueHeader}}
-          <button name="signup_borrower_btn" value="submit_value" class="mainpage_buttons">Заемщикам</button>
-          <button name="signup_lender_btn" value="submit_value" class="mainpage_buttons">Инвесторам</button>
-          <button name="signin_borrower_btn" value="submit_value" class="mainpage_buttons">Кабинет заемщика</button>
-          <button name="signin_lender_btn" value="submit_value" class="mainpage_buttons">Кабинет инвестора</button>
+           <a type="submit" name="signup_borrower_btn" value="submit_value" href="/borrowers/add" class="mainpage_buttons">Заемщикам</a>
+          <a type="submit" name="signup_lender_btn" value="submit_value" href="" class="mainpage_buttons">Инвесторам</a>
+          <a type="submit" name="signin_borrower_btn" value="submit_value" href="/borrowers/enter" class="mainpage_buttons">Кабинет заемщика</a>
+          <a type="submit" name="signin_lender_btn" value="submit_value" href="" class="mainpage_buttons">Кабинет инвестора</a>
       {{/if}}
     </header>
     {{{body}}}
