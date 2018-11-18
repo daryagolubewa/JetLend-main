@@ -15,7 +15,7 @@ const saltRounds = 10;
 
 router.get('/add', (req,res) => {
   res.render('borrowerSignUp')
-})
+});
 
 router.get('/enter', function(req, res) {
     res.render('borrowerSignIn');
@@ -33,6 +33,10 @@ router.get('/profile', function(req, res) {
 router.get('/application', function(req, res) {
     res.render('applicationForm');
 
+});
+
+router.get('/payment', (req,res) => {
+    res.render('paymentsInfo');
 });
 
 router.post('/add', async (req, res) => {

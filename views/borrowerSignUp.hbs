@@ -1,4 +1,5 @@
 <head><script src="/javascripts/borrowerSignUp.js"></script></head>
+<center>
 <div class="borrower-main">
     <div id="new-borrower-form" class="flex-row form-block">
         <div class="borrower-header">
@@ -24,15 +25,18 @@
                 <span class="input-group-label">Ваш номер телефона:</span><br>
                 <input id="borrower-phone" class="input-group-input" type="text" name="phone" value="" required>
             </label><br>
-            <button id="btn-submit" class="form-buttons button-sign" style="float: left">Отправить</button>
         </div>
+    </div>
+    <div class="button-send">
+        <button id="btn-submit" class="form-buttons button-sign">Отправить</button>
     </div>
 
     <div class="borrower-email-confirmation">
-        <p class="borrower-email-confirmation-message"> Для подтверждения регистрации, пожалуйста, перейдите по ссылке, которую мы выслали вам на почту. Спасибо!</p>
+        <div class="borrower-email-confirmation-message"> Для подтверждения регистрации, пожалуйста, перейдите по ссылке, которую мы выслали вам на почту. Спасибо!</div>
     </div>
     <div>
         <p class="borrower-sign-up-error"></p>
     </div>
 
 </div>
+</center>
