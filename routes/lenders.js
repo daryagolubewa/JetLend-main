@@ -86,6 +86,7 @@ if (thisUser[0]["dataValues"]["email"] == lenderEmail &&
     // bcrypt.hashSync(lenderPassword, saltRounds)) {
 
       let idUser = thisUser[0]["dataValues"]["id"]
+
       res.redirect(`/lenders/profile?UsEr_id=${idUser}`)
     } else {
       res.redirect('/lenders/logLender')
@@ -96,7 +97,11 @@ if (thisUser[0]["dataValues"]["email"] == lenderEmail &&
 router.get('/profile', async function(req, res, next) {
  // console.log(" Loan.getLoan = ", await  models.Loan.getLoan("2"))
 
- let loans = await  models.Loan.getLoan("2")
+ let currUsEr  = req.param("UsEr_id")
+
+console.log("currUsEr = ", currUsEr)
+
+ let loans = await  models.Loan.getLoan(currUsEr)
 
  let loansInf = []
 
@@ -134,12 +139,9 @@ router.get('/profile/pay', function(req, res, next) {
 });
 
 
-router.post('/profile/paid', async function(req, res, next) {
+router.post('/profile/pay', async function(req, res, next) {
 
-  console.log("ЗАШЛИ в post '/pay'!!!!!!!!!!!!!!!!!")
-
-
-  let amountGive = req.param("loan_summ")
+    let amountGive = req.param("loan_summ")
 
   // var strGET = window.location.search.replace( '?', ''); 
 
