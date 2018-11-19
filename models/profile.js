@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
     organization: DataTypes.STRING,
     release_date: DataTypes.DATE,
     tax_number: DataTypes.INTEGER,
-    file_name: DataTypes.STRING,
     borrower_id: DataTypes.INTEGER,
     is_scored: DataTypes.BOOLEAN
   }, {});

@@ -4,9 +4,9 @@ sgMail.setApiKey('SG.0a8RJlseTaGaTIjKTNzBpg.QKKWcfvedS0yS1taaKx3LZBenYsyuV01tTey
 let sendEmail = (req) =>{
   const msg = {
     to: req.body.email,
-    from: 'yashakuzm@gmail.com',
+    from: 'info@jetlend.com',
     subject: 'Добро пожаловать в JetLend',
-    text: `Привет ${req.body.name}! Поздравляем с регистрацией на JetLend, посмотри свой пароль и не забудь его, он ОЧЕНЬ важен для тебя: ${req.body.password}`       
+    text: `${req.body.name}! Поздравляем с регистрацией на JetLend, посмотрите свой пароль и не забудьте его: ${req.body.password}`       
   };
   sgMail.send(msg);
 }

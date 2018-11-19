@@ -32,22 +32,23 @@ module.exports = {
       tax_number: {
         type: Sequelize.INTEGER
       },
-      file_name: {
-        type: Sequelize.STRING
-      },
       borrower_id: {
         type: Sequelize.INTEGER
       },
       is_scored: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        allowNull: true,
+        type: Sequelize.DATE(3),
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP(3)')
       },
       updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        allowNull: true,
+        type: Sequelize.DATE(3),
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+
       }
     });
   },

@@ -1,30 +1,51 @@
+<head>
+  <script src="/javascripts/borrowerProfile.js"></script>
+</head>
 <center>
     <div class="borrower-account-main">
-        <div class="borrower-account-application-btn borrower-account-style">
-            <a type="submit" name="application-btn" value="submit_value" href="/borrowers/application" class="form-buttons borrower-application-btn">Заполнить анкету заёмщика</a>
+        <div class="borrower-account-style">
+            <h1>Здравствуйте, {{profileName.name}}</h1>
+
+<center>
+        {{#if profile}}
+          <div class="borrower-account-main">
+              <div class="borrower-account-application-btn borrower-account-style">
+                  <a href="#">Изменить данные</a>
+              </div>
+          </div>    
+        {{else}}
+          <div class="borrower-account-main">
+              <div class="borrower-account-application-btn borrower-account-style">
+                  <a type="submit" name="application-btn" value="submit_value" href="/borrowers/application" class="form-buttons borrower-application-btn">Заполнить анкету заёмщика</a>
+              </div>
+          </div>   
+        {{/if}}
+        {{#if status}}
+        <div class="borrower-account-load-file borrower-account-style">
+            <span class="input-group-label">Выписка на обработке</span>
         </div>
+        {{else}}
         <div class="borrower-account-load-file borrower-account-style">
             <label class="input-group col-1-3">
-                <span class="input-group-label">Загрузить выписку:</span><br>
-                <input id="borrower-file" class="" type="file" accept=".txt" name="file" required>
-                <button class="borrower-file-send">Отправить</button>
+                <form method="post" id="myform"action="/borrowers/file" enctype="multipart/form-data">
+                    <span class="input-group-label">Загрузить выписку:</span><br>
+                    <input id="borrower-file" type="file" name="file" required>
+                    <button class="borrower-file-send form-buttons borrower-application-btn">Отправить</button>
+                </form>
+
             </label><br>
         </div>
+        {{/if}}
         <div class="borrower-table-info borrower-account-style">
             <table class="borrower-table">
                 <tr>
                     <th>Статус заявки</th>
-                    <th>Дата платежа</th>
-                    <th>Размер платежа</th>
+                    <th>{{reqStatus}}</th>
                 </tr>
-                <tr>
-                    <td>pending</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-
             </table>
-
+        </div>
+        <div class="borrower-account-payments">
+            <a name="see-payment-btn" href="/borrowers/payment" class="form-buttons borrower-application-btn">Информация о платежах</a>
         </div>
     </div>
 </center>

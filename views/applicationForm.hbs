@@ -1,13 +1,17 @@
+<head>
+    <script src="/javascripts/applicationForm.js"></script>
+</head>
+<center>
 <div class="borrower-main">
     <div id="borrower-application" class="forms">
         <div class="borrower-header">
-            <h1>Пожалуйста, заполните анкету заёмщика:</h1>
+            <h2>Пожалуйста, заполните анкету заёмщика:</h2>
         </div>
         <div class="borrower-application">
             <center>
             <label class="input-group col-1-3">
                 <span class="input-group-label">Имя:</span><br>
-                <input id="borrower-first-name" class="input-group-input" type="text" name="first-name" value="{{person.firstName}}" required>
+                <input id="borrower-first-name" class="input-group-input" type="text" name="first-name" value="{{name}}" required>
             </label><br>
 
             <label class="input-group col-1-3">
@@ -39,7 +43,7 @@
 
             <label class="input-group col-1-3">
                 <span class="input-group-label">Когда выдан:</span><br>
-                <input id="borrower-date-release" class="input-group-input" type="text"  name="date-release" value="" required>
+                <input id="borrower-date-release" class="input-group-input" type="date"  name="date-release" value="" required>
             </label><br>
 
             <label class="input-group col-1-3">
@@ -49,7 +53,7 @@
 
             </center>
             <div class="btn">
-                <button id="btn-submit" class="form-buttons button-appl">Отправить</button>
+                <button id="btn-submit1" class="form-buttons button-appl">Отправить</button>
             </div>
         </div>
 
@@ -58,3 +62,4 @@
         <p class="borrower-application-request"> Ваша заявка успешно отравлена.</p>
     </div>
 </div>
+</center>

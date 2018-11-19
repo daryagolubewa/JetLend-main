@@ -21,32 +21,55 @@ a {
     border-radius: 10px;
 }
 
+.borrower-account-load-file {
+    display: block;
+    height: 50px;
+}
 
 .borrower-account-main {
     display: flex;
     flex-direction: column;
-    //width: 300px;
+
+}
+
+.borrower-account-payments {
+    display: none;
 }
 
 .borrower-application {
-    margin: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
 }
 
 .borrower-application-request {
     display: none;
 }
 
-.borrower-main {
-    float: right;
+.borrower-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    width: 300px;
 }
 
 .borrower-main-profile {
-
 }
 
 .borrower-email-confirmation-message {
     display: none;
-    color: #ffffff;
+    color: #00000;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    width: 700px;
+    height: 50px;
+    margin-top: 100px;
+    line-height: 25px;
+}
+
+.borrower-payments-table td {
+    text-align: center;
 }
 
 .borrower-sign-up-error {
@@ -56,6 +79,10 @@ a {
 
 .borrower-table {
     color: #000000;
+}
+
+.borrower-table-info {
+    display: none;
 }
 
 header {
@@ -100,14 +127,20 @@ header {
 }
 
 .button-sign {
-    margin: 5px 0px 0px 0px;
-    float: left;
+    /*margin: 5px 0px 0px 0px;*/
     line-height: 20px;
+    margin: auto;
+    float: none;
 }
 
 .button-appl {
     float: none;
 }
+
+/*.borrower-login-btn {*/
+    /*margin: auto;*/
+    /*float: none;*/
+/*}*/
 
 .borrower-application-btn {
     font-size: 15px;
@@ -134,6 +167,7 @@ header {
 
 #new-borrower-form {
     display: block;
+    margin: 0px 0px 10px 0px;
 }
 
 #borrower-application {

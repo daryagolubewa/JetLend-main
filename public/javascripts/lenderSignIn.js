@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btnSbm = document.getElementById('btn-submit');
+    const btnSbm = document.getElementById('btn-login');
     const errorMessage = document.getElementById('lender-sign-up-error');
 
     btnSbm.addEventListener('click', async () => {
