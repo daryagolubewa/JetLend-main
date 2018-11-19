@@ -17,7 +17,7 @@ const saltRounds = 10;
 
 router.get('/add', (req,res) => {
   res.render('borrowerSignUp')
-})
+});
 
 router.get('/enter', function(req, res) {
     res.render('borrowerSignIn');
@@ -63,10 +63,16 @@ router.get('/application', function(req, res) {
 
 });
 
+
 router.post('/application',async function(req, res) {
   await models.Profile.create({first_name: req.body.first_name, last_name: req.body.last_name, paternity_name: req.body.paternity_name, date_birth: req.body.date_birth, passport_number: req.body.passport_number, organization:  req.body.organization, release_date: req.body.release_date, tax_number: req.body.tax_number, borrower_id: req.session.passport.user.id})
   res.send(200)
 })
+
+router.get('/payment', (req,res) => {
+    res.render('paymentsInfo');
+});
+
 
 router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)

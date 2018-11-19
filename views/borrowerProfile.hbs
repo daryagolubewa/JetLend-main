@@ -1,17 +1,24 @@
-<head><script src="/javascripts/borrowerProfile.js"></script></head>
+<head>
+  <script src="/javascripts/borrowerProfile.js"></script>
+</head>
 <center>
     <div class="borrower-account-main">
         <div class="borrower-account-style">
             <h1>Здравствуйте, {{profileName.name}}</h1>
-        </div>
+
+<center>
         {{#if profile}}
-            <div class="borrower-account-application-btn borrower-account-style">
-                <a href="#">Изменить данные</a>
-            </div>
+          <div class="borrower-account-main">
+              <div class="borrower-account-application-btn borrower-account-style">
+                  <a href="#">Изменить данные</a>
+              </div>
+          </div>    
         {{else}}
-            <div class="borrower-account-application-btn borrower-account-style">
-                <a type="submit" name="application-btn" value="submit_value" href="/borrowers/application" class="form-buttons borrower-application-btn">Заполнить анкету заёмщика</a>
-            </div>
+          <div class="borrower-account-main">
+              <div class="borrower-account-application-btn borrower-account-style">
+                  <a type="submit" name="application-btn" value="submit_value" href="/borrowers/application" class="form-buttons borrower-application-btn">Заполнить анкету заёмщика</a>
+              </div>
+          </div>   
         {{/if}}
         {{#if status}}
         <div class="borrower-account-load-file borrower-account-style">
@@ -25,6 +32,7 @@
                     <input id="borrower-file" type="file" name="file" required>
                     <button class="borrower-file-send form-buttons borrower-application-btn">Отправить</button>
                 </form>
+
             </label><br>
         </div>
         {{/if}}
@@ -32,17 +40,12 @@
             <table class="borrower-table">
                 <tr>
                     <th>Статус заявки</th>
-                    <th>Дата платежа</th>
-                    <th>Размер платежа</th>
+                    <th>{{reqStatus}}</th>
                 </tr>
-                <tr>
-                    <td>pending</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-
             </table>
-
+        </div>
+        <div class="borrower-account-payments">
+            <a name="see-payment-btn" href="/borrowers/payment" class="form-buttons borrower-application-btn">Информация о платежах</a>
         </div>
     </div>
 </center>
