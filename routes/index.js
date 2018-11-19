@@ -8,9 +8,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { trueHeader });
 });
 
-router.get('/', function(req, res) {
-    let toMainPage = true;
-    res.render('index', { toMainPage });
-});
+// router.get('/', function(req, res) {
+//     let toMainPage = true;
+//     res.render('index', { toMainPage });
+// });
 
 module.exports = router;

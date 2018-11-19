@@ -135,6 +135,12 @@ header {
 .button-send {
     display: block;
 }
+.button-enter-profile {
+    width: 100px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 24px;
+}
 
 .button-appl {
     float: none;

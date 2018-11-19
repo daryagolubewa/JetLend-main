@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     const upload = async (file) => {
-        let response = await fetch('/borrowers/file', {
+        let response = await fetch('/borrowers/profile', {
             method: 'post',
             headers: {
                 "Content-Type": "file/text; charset=utf-8",
             },
             body: file
-        })
+        });
         //response = await response;
         if (response.status === 200) {
             uploadForm.style.display = 'none';

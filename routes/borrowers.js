@@ -39,6 +39,10 @@ router.get('/payment', (req,res) => {
     res.render('paymentsInfo');
 });
 
+router.get('/info', (req,res) => {
+    res.render('borrowerInfo');
+});
+
 router.post('/add', async (req, res) => {
   let curEmail = await models.Borrower.getEmail(req.body.email)
   let curPhone = await models.Borrower.getPhone(req.body.phone)
@@ -73,6 +77,6 @@ router.post('/enter', (req, res) => {
         return res.json(user)
     })
   })(req, res);
-})
+});
 
 module.exports = router;
