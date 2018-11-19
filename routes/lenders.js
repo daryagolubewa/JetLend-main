@@ -86,8 +86,7 @@ if (thisUser[0]["dataValues"]["email"] == lenderEmail &&
     // bcrypt.hashSync(lenderPassword, saltRounds)) {
 
       let idUser = thisUser[0]["dataValues"]["id"]
-
-      res.redirect(`/lenders/profile?UsEr_id = ${idUser}`)
+      res.redirect(`/lenders/profile?UsEr_id=${idUser}`)
     } else {
       res.redirect('/lenders/logLender')
     }

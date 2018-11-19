@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('new-borrower-form');
     const message = document.getElementsByClassName('borrower-email-confirmation-message')[0];
     const errorMessage = document.getElementsByClassName('borrower-sign-up-error')[0];
+    const sendBtn = document.querySelector('.button-send');
 
     btnSbm.addEventListener('click', async () => {
         const borrowerName = document.getElementById('borrower-name').value;
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (response.status === 200) {
             form.style.display = 'none';
-            message.style.display = 'block';
+            sendBtn.style.display = 'none'; 
+            message.style.display = 'block'; 
         } else {
             response = await response.text();
             errorMessage.innerText = response;
