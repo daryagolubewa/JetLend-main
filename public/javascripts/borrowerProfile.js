@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // headers: {'Content-Type': 'multipart/form-data'},
             body: formData
         })
-        console.log(borrowerFile)
+        alert(document.cookie)
         if (response.status === 200) {
             window.location = 'http://localhost:3000/borrowers/profile'
             // console.log(borrowerFile)

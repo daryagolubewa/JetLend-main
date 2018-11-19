@@ -52,8 +52,12 @@ router.get('/profile', async function(req, res) {
     let name = await models.Borrower.findById(await req.session.passport.user.id)
     let profile = await models.Profile.findAll({where:{borrower_id: req.session.passport.user.id}})
     let status
-    profile = (profile[0].first_name == null) ? undefined : true 
-    status = name.file_name == null ? undefined : name.file_name
+    if(profile.length != 0) {
+      profile = (profile[0].first_name == null) ? undefined : true 
+    }
+    if(name != null) {
+      status = name.file_name == null ? undefined : name.file_name
+    }
     res.render('borrowerProfile', {profileName: name, status, profile});
 
 });
@@ -92,13 +96,17 @@ router.post('/add', async (req, res) => {
  } 
 })
 
+router.get('/red', (req,res) => {
+  res.redirect('/borrowers/profile')
+})
+
 router.post('/enter', (req, res) => {
-  addMiddlewares(router, models.Borrower);
+  // addMiddlewares(router, models.Borrower);
   passport.authenticate('local', (err, user, info) => {
     if (err) {
         return res.send(400, err);
     }
-    req.login(user, (err) => {
+    req.logIn(user, (err) => {
         if (err) {
             return res.send(400 , err);
         }
