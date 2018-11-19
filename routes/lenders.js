@@ -146,7 +146,7 @@ router.post('/profile/paid', async function(req, res, next) {
   console.log("ЗАБРАЛИ ЗНАЧЕНИЕ ИЗ ВВОДА!!!!!!!!!!!!!!!!!!")
 
   if (amountGive) {
-    models.Loan.create({
+    await models.Loan.create({
    "lender_id": "2",
    "date_give":  new Date(), //CURRENT_DATE
    "amount_give": amountGive,
