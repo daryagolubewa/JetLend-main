@@ -35,7 +35,7 @@ function addMiddlewares(router, role) {
         secret: 'keyboard cat',
         resave: false,
         saveUninitialized: true,
-        cookie: { maxAge: 10*60*1000 }
+        cookie: { maxAge: 10*60*10000 }
     }));
     router.use(passport.initialize());
     router.use(passport.session());

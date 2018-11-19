@@ -25,11 +25,12 @@ a {
 .borrower-account-main {
     display: flex;
     flex-direction: column;
-    //width: 300px;
 }
 
 .borrower-application {
     margin: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
 }
 
 .borrower-application-request {
