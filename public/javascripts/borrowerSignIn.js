@@ -8,14 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let response = await fetch('/borrowers/enter', {
             method: 'post',
+            credentials: 'same-origin',
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
             },
             body: JSON.stringify({email: borrowerEmail, password: borrowerPassword})
         });
-
+        console.log(await response.json())
         if (response.status === 200) {
-            window.location = 'http://localhost:3000'
+            window.location = 'http://localhost:3000/borrowers/profile'
         } else {
             response = await response.text();
             errorMessage.innerText = response;

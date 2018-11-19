@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     file_name: DataTypes.STRING,
     password: DataTypes.STRING
+    // active:DotaTypes.BOOLEAN
   }, {});
   Borrower.associate = function(models) {
-
-  Borrower.hasMany(models.CreditRequest, { foreignKey: "borrower_id" }) 
-
+    Borrower.hasOne(models.Profile, { foreignKey: "borrower_id"})
+    Borrower.hasMany(models.CreditRequest, { foreignKey: "borrower_id" }) 
   };
 
   Borrower.checkUser = async (name, userEmail, userPassword) => {
