@@ -6,7 +6,7 @@ const addMiddlewares = require('../middlewares/add-middlewares');
 
 
 var router = express.Router();
-addMiddlewares(router, models.Lender);
+// addMiddlewares(router, models.Lender);
 const saltRounds = 10;
 /* GET users listing. */
 router.get('/',  function(req, res, next) {
