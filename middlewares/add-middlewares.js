@@ -8,11 +8,11 @@ const FileStore = require('session-file-store')(session);
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-function addMiddlewares(router) {
+function addMiddlewares(router, role) {
     passport.use(new LocalStrategy(
         { usernameField: 'email' },
         async (email, password, done) => {
-            const foundUsers = await models.Borrower.getEmail(email);
+            const foundUsers = await role.getEmail(email);
             if(foundUsers.length === 0) {
                 return done(400, 'Error. Email not found!');
             } else {
@@ -35,7 +35,7 @@ function addMiddlewares(router) {
         secret: 'keyboard cat',
         resave: false,
         saveUninitialized: true,
-        cookie: { maxAge: 10*60*1000 }
+        cookie: { maxAge: 10*60*10000 }
     }));
     router.use(passport.initialize());
     router.use(passport.session());

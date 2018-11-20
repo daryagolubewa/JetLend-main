@@ -4,7 +4,7 @@
   <head>
       <title>{{title}}</title>
       <link rel='stylesheet' href='/stylesheets/style.css'/>
-      <link rel="icon" type="image/png" href="images/logo1.png"/>
+      <link rel="icon" type="image/png" href="/images/logo1.png"/>
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 
     {{{head}}}
@@ -13,10 +13,10 @@
     <header>
       <img src="/images/logo.png" class="jetimg">
       {{#if trueHeader}}
-          <a name="signup_borrower_btn" href="/borrowers/add" class="form-buttons">Заемщикам</a>
-          <a  name="signup_lender_btn" href="" class="form-buttons">Инвесторам</a>
-          <a  name="signin_borrower_btn"  href="/borrowers/enter" class="form-buttons">Кабинет заемщика</a>
-          <a  name="signin_lender_btn"  href="" class="form-buttons">Кабинет инвестора</a>
+           <a name="signup_borrower_btn" href="/borrowers/add" class="form-buttons">Рег. Заемщиков</a>
+          <a name="signup_lender_btn" href="/lenders/regLender" class="form-buttons">Рег. Инвесторов</a>
+          <a name="signin_borrower_btn" href="/borrowers/enter" class="form-buttons">Кабинет заемщика</a>
+          <a name="signin_lender_btn" href="/lenders/logLender" class="form-buttons">Кабинет инвестора</a>
       {{/if}}
     </header>
     {{{body}}}

@@ -29,6 +29,7 @@ a {
 .borrower-account-main {
     display: flex;
     flex-direction: column;
+
 }
 
 .borrower-account-payments {
@@ -142,6 +143,7 @@ header {
     line-height: 24px;
 }
 
+
 .button-appl {
     float: none;
 }
@@ -179,6 +181,15 @@ header {
     margin: 0px 0px 10px 0px;
 }
 
+#new-lender-form {
+    display: block;
+    margin: 0px 0px 10px 0px;
+}
+
 #borrower-application {
     display: block;
+}
+
+.lender-application {
+
 }
