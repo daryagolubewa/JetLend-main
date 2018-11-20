@@ -12,5 +12,15 @@ module.exports = (sequelize, DataTypes) => {
 
         Loan.hasMany(models.Credit, { foreignKey: "loan_id" }) 
   };
+
+
+Loan.getLoan = async (lender_id) => {
+    return await  Loan.findAll({
+      where: {
+        lender_id: lender_id
+      }
+    })
+  }
+
   return Loan;
 };

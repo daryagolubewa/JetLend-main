@@ -1,34 +1,20 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    const sendFileBtn = document.querySelector('.borrower-file-send');
-    const uploadedFile = document.getElementById('borrower-file');
-    const uploadForm = document.querySelector('.borrower-account-load-file');
-    const payment = document.querySelector('.borrower-account-payments');
-    const reqStatus =  document.querySelector('.borrower-table-info');
 
+document.addEventListener('DOMContentLoaded', () => {
+    const borrowerFile = document.getElementById('borrower-file').files[0]
+    const borrowerFileSend = document.getElementsByClassName('borrower-file-send')[0]
 
-    const selectedFile = () => upload(uploadedFile.files[0]);
-
-    sendFileBtn.addEventListener('click', selectedFile, false);
-
-
-    const upload = async (file) => {
+    borrowerFileSend.addEventListener('click', async (event) => {
+        // event.preventDefault()
         let response = await fetch('/borrowers/file', {
-            method: 'post',
-            headers: {
-                "Content-Type": "file/text; charset=utf-8",
-            },
-            body: file
+            method: 'POST',
+            // headers: {'Content-Type': 'multipart/form-data'},
+            body: formData
         })
-        //response = await response;
+        alert(document.cookie)
         if (response.status === 200) {
-            uploadForm.style.display = 'none';
-            payment.style.display = 'block';
-            reqStatus.style.display = 'block';
+            window.location = 'http://localhost:3000/borrowers/profile'
+            // console.log(borrowerFile)
+        }    
+    })
 
-        }
-
-    };
-
-
-});
-
+})

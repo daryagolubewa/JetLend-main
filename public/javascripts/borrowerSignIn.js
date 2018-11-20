@@ -8,14 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let response = await fetch('/borrowers/enter', {
             method: 'post',
+            credentials: 'same-origin',
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
             },
             body: JSON.stringify({email: borrowerEmail, password: borrowerPassword})
         });
-
+        console.log(response)
         if (response.status === 200) {
-            window.location = 'http://localhost:3000/borrowers/profile'
+            console.log(document.cookie)
+            // await response.redirect('/')
+            // let resp = await fetch('/borrowers/profile', {
+                // credentials: 'same-origin'
+            // });
+
+            window.location.assign('http://localhost:3000/borrowers/red')
         } else {
             response = await response.text();
             errorMessage.innerText = response;

@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     // active:DotaTypes.BOOLEAN
   }, {});
   Borrower.associate = function(models) {
-    Borrower.belongsTo(models.Profile, { foreignKey: "borrower_id" })
+    Borrower.hasOne(models.Profile, { foreignKey: "borrower_id"})
     Borrower.hasMany(models.CreditRequest, { foreignKey: "borrower_id" }) 
   };
 

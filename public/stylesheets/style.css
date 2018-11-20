@@ -29,6 +29,7 @@ a {
 .borrower-account-main {
     display: flex;
     flex-direction: column;
+
 }
 
 .borrower-account-payments {

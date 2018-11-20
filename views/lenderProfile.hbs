@@ -1,0 +1,17 @@
+<div>
+
+  <h1>Ваш личный кабинет</h1>
+
+   <form id="payLender" action="/lenders/profile/pay" method="GET">
+
+     <input type="submit" value="Инвестировать средства">
+       <br>
+   </form>
+
+<ul class="loans_list">
+  {{#each loan}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+</div>
