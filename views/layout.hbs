@@ -13,12 +13,17 @@
     <header>
       <img src="/images/logo.png" class="jetimg">
       {{#if trueHeader}}
+
            <a type="submit" name="signup_borrower_btn" value="submit_value" href="/borrowers/add" class="form-buttons">Рег. Заемщиков</a>
           <a type="submit" name="signup_lender_btn" value="submit_value" href="
           /lenders/regLender" class="form-buttons">Рег. Инвесторов</a>
           <a type="submit" name="signin_borrower_btn" value="submit_value" href="/borrowers/enter" class="form-buttons">Кабинет заемщика</a>
           <a type="submit" name="signin_lender_btn" value="submit_value" href="/lenders/logLender" class="form-buttons">Кабинет инвестора</a>
+
       {{/if}}
+        {{#unless toMainPage}}
+            <a name="signup_borrower_btn" href="/" class="form-buttons">На главную</a>
+        {{/unless}}
     </header>
     {{{body}}}
   </body>

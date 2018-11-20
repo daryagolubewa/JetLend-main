@@ -7,7 +7,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   let trueHeader = true
   res.render('index', { trueHeader });
+});
 
+router.get('/', function(req, res) {
+    let toMainPage = true;
+    res.render('index', { toMainPage });
 });
 
 module.exports = router;
