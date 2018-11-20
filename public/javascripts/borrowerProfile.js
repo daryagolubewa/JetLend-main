@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let response = await fetch('/borrowers/file', {
             method: 'POST',
             body: formData
+
         });
         if (response.status === 200) {
             window.location = 'http://localhost:3000/borrowers/profile'
@@ -14,4 +15,3 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 });
-
